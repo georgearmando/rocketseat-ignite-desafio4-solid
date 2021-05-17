@@ -46,7 +46,14 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-    // Complete aqui
+    const user = receivedUser;
+
+    Object.assign(user, {
+      admin: true,
+      updated_at: new Date()
+    });
+
+    return user;
   }
 
   list(): User[] {
