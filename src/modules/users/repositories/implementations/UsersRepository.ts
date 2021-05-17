@@ -25,7 +25,7 @@ class UsersRepository implements IUsersRepository {
       name,
       email,
       created_at: new Date(),
-      updated_at: new Date()
+      updated_at: new Date(),
     });
 
     this.users.push(user);
@@ -34,13 +34,13 @@ class UsersRepository implements IUsersRepository {
   }
 
   findById(id: string): User | undefined {
-    const user = this.users.find(user => user.id === id);
+    const user = this.users.find((user) => user.id === id);
 
     return user;
   }
 
   findByEmail(email: string): User | undefined {
-    const user = this.users.find(user => user.email === email);
+    const user = this.users.find((user) => user.email === email);
 
     return user;
   }
@@ -50,7 +50,7 @@ class UsersRepository implements IUsersRepository {
 
     Object.assign(user, {
       admin: true,
-      updated_at: new Date()
+      updated_at: new Date(),
     });
 
     return user;
